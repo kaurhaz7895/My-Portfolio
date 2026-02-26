@@ -8,7 +8,7 @@
 <style>
 :root {
     --cobalt: #005fb7;
-    --slate: #2f2f2f;
+    --dark: #1f2933;
     --light: #f4f7f9;
     --success: #28a745;
 }
@@ -16,70 +16,97 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    color: var(--slate);
+    color: var(--dark);
     line-height: 1.6;
     background: var(--light);
 }
 
+/* HERO */
 header {
-    background: white;
-    padding: 2rem;
+    background: linear-gradient(135deg, #005fb7, #003d7a);
+    color: white;
+    padding: 3rem 1rem;
     text-align: center;
-    border-bottom: 4px solid var(--cobalt);
 }
 
-.hero h1 {
-    font-size: 2.5rem;
+header h1 {
+    font-size: 2.7rem;
     margin: 0;
-    color: var(--cobalt);
 }
 
-.badge-container { margin-top: 10px; }
+header p {
+    margin: 6px 0;
+    opacity: 0.95;
+}
+
+.badge-container { margin-top: 15px; }
 
 .badge {
-    background: #e1f0ff;
-    color: var(--cobalt);
+    background: rgba(255,255,255,0.15);
     padding: 6px 15px;
     border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin: 5px;
     display: inline-block;
 }
 
+/* SECTION */
 section {
-    max-width: 1000px;
-    margin: 2rem auto;
+    max-width: 1100px;
+    margin: 3rem auto;
     padding: 0 1rem;
 }
 
 .card {
     background: white;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     margin-bottom: 2rem;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 h2 {
     border-left: 5px solid var(--cobalt);
     padding-left: 15px;
-    color: var(--slate);
 }
 
-/* Expertise styling */
-.skill-group {
-    margin-bottom: 1.5rem;
+/* METRICS */
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.skill-group strong {
+.metric {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.metric:hover {
+    transform: scale(1.05);
+}
+
+.metric h3 {
+    font-size: 2rem;
     color: var(--cobalt);
+    margin: 0;
 }
 
 /* Testimonials */
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -89,9 +116,9 @@ h2 {
     border-left: 4px solid var(--success);
     padding: 1rem;
     font-style: italic;
-    font-size: 0.9rem;
-    border-radius: 6px;
-    min-height: 120px;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
 }
 
 .student-name {
@@ -100,6 +127,10 @@ h2 {
     font-weight: bold;
     font-style: normal;
     color: var(--cobalt);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
 .nav-buttons {
@@ -119,7 +150,7 @@ h2 {
 }
 
 .nav-buttons button:hover {
-    background: #004a8f;
+    background: #003d7a;
 }
 
 .counter {
@@ -129,7 +160,6 @@ h2 {
     color: gray;
 }
 
-/* CTA */
 .cta-button {
     display: block;
     width: fit-content;
@@ -143,67 +173,73 @@ h2 {
     transition: 0.3s;
 }
 
-.cta-button:hover { background: #004a8f; }
+.cta-button:hover { background: #003d7a; }
 
 </style>
 </head>
 
 <body>
 
-<header class="hero">
+<header>
     <h1>Jasleen Kaur</h1>
-    <p>Corporate Trainer | Microsoft Certified Trainer | Oracle Certified Instructor</p>
+    <p><strong>Microsoft Certified Trainer | Oracle Certified Instructor</strong></p>
+    <p>Enterprise Technology Trainer specializing in Azure, Microsoft Fabric, and Advanced Programming Foundations</p>
 
     <div class="badge-container">
-        <span class="badge">Microsoft Certified: Fabric Analytics Engineer Associate</span>
-        <span class="badge">Microsoft Certified: Fabric Data Engineer Associate</span>
-        <span class="badge">Microsoft Certified: Azure Fundamentals</span>
-	<span class="badge">Microsoft Certified: Azure Data Engineer Associate</span>
-	<span class="badge">Oracle Certified Associate, Java SE 8 Programmer</span>
-        <span class="badge">10+ Years Teaching Experience</span>
+        <span class="badge">Fabric Analytics Engineer Associate</span>
+        <span class="badge">Fabric Data Engineer Associate</span>
+        <span class="badge">Azure Data Engineer Associate</span>
+        <span class="badge">Azure Fundamentals</span>
+        <span class="badge">Oracle Certified Java SE 8 Programmer</span>
+        <span class="badge">10+ Years Experience</span>
     </div>
 </header>
 
 <section>
 
-<div class="card">
 <h2>Professional Profile</h2>
-
+<div class="card">
 <p>
-With over 10+ years of experience in technical education and corporate training, I specialize in delivering 
-industry-focused programs across foundational programming, data structures, cloud computing, and Microsoft enterprise technologies.
+With over 10+ years of experience in corporate training and academia, I have delivered high-impact programs across programming foundations and enterprise cloud technologies.
 </p>
-
 <p>
-I have trained 5,000+ learners including university students, corporate teams, and working professionals in 
-<strong>C, C++, Java SE8, Java SE11, Java SE17, Java EE, Data Structures & Algorithms, Microsoft Azure, Azure Data Factory, Azure Synapse Analytics, Microsoft Fabric, SQL, and enterprise data engineering.</strong>
+Trained <strong>5,000+ learners</strong> globally in C, C++, Java SE8/11/17, Java EE, Data Structures & Algorithms, Microsoft Azure, Azure Data Factory, Azure Synapse, Microsoft Fabric, and Enterprise Data Engineering.
 </p>
-
 <p>
-My training methodology focuses on deep conceptual clarity, real-world architecture understanding, and production-level implementation scenarios.
+My approach emphasizes architectural clarity, production-ready implementation, and certification-focused excellence.
 </p>
+</div>
 
+<h2>Impact Metrics</h2>
+<div class="metrics">
+    <div class="metric">
+        <h3>5000+</h3>
+        Learners Trained
+    </div>
+    <div class="metric">
+        <h3>10+</h3>
+        Years Experience
+    </div>
+    <div class="metric">
+        <h3>200+</h3>
+        Corporate Sessions
+    </div>
+    <div class="metric">
+        <h3>15+</h3>
+        Global Organizations
+    </div>
 </div>
 
 <h2>Core Expertise</h2>
-
 <div class="card">
-
-<div class="skill-group">
 <strong>Programming Foundations:</strong><br>
 C • C++ • Java • OOP • Data Structures • Algorithms • Problem Solving
-</div>
-
-<div class="skill-group">
+<br><br>
 <strong>Cloud & Microsoft Stack:</strong><br>
 Microsoft Azure • Azure Data Factory • Azure Synapse Analytics • Microsoft Fabric • Azure SQL • Power BI
-</div>
-
-<div class="skill-group">
+<br><br>
 <strong>Enterprise Data Engineering:</strong><br>
-ETL/ELT Pipelines • Data Modeling • Analytics Engineering • Real-Time Scenarios • Architecture Design
-</div>
-
+ETL/ELT Pipelines • Data Modeling • Analytics Engineering • Architecture Design
 </div>
 
 <h2>What Learners Say</h2>
@@ -219,8 +255,8 @@ ETL/ELT Pipelines • Data Modeling • Analytics Engineering • Real-Time Scen
     <div class="counter" id="testimonialCounter"></div>
 </div>
 
-<a href="mailto:your-email@example.com" class="cta-button">
-    Book a Corporate Training Session
+<a href="mailto:jasleen.kaur@koenig-solutions.com" class="cta-button">
+    Request Corporate Training Proposal
 </a>
 
 </section>
@@ -317,51 +353,35 @@ const itemsPerPage = 4;
 let currentPage = 0;
 
 function showTestimonials() {
-
     const grid = document.getElementById("testimonialGrid");
     const counter = document.getElementById("testimonialCounter");
-
     grid.innerHTML = "";
 
+    const totalPages = Math.ceil(testimonials.length / itemsPerPage);
     const start = currentPage * itemsPerPage;
     const end = start + itemsPerPage;
 
-    const currentItems = testimonials.slice(start, end);
-
-    currentItems.forEach(item => {
+    testimonials.slice(start, end).forEach(item => {
         const div = document.createElement("div");
         div.className = "testimonial";
-        div.innerHTML = `
-            ${item.text}
-            <span class="student-name">${item.name}</span>
-        `;
+        div.innerHTML = `${item.text}<span class="student-name">${item.name}</span>`;
         grid.appendChild(div);
     });
 
-    counter.innerText =
-        `Showing ${start + 1} - ${Math.min(end, testimonials.length)} of ${testimonials.length} feedbacks`;
+    counter.innerText = `Page ${currentPage + 1} of ${totalPages}`;
 }
 
 function nextTestimonial() {
-    if ((currentPage + 1) * itemsPerPage < testimonials.length) {
-        currentPage++;
-    } else {
-        currentPage = 0;
-    }
+    currentPage = (currentPage + 1) % Math.ceil(testimonials.length / itemsPerPage);
     showTestimonials();
 }
 
 function prevTestimonial() {
-    if (currentPage > 0) {
-        currentPage--;
-    } else {
-        currentPage = Math.floor((testimonials.length - 1) / itemsPerPage);
-    }
+    currentPage = (currentPage - 1 + Math.ceil(testimonials.length / itemsPerPage)) % Math.ceil(testimonials.length / itemsPerPage);
     showTestimonials();
 }
 
 showTestimonials();
-
 </script>
 
 </body>
