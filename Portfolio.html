@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasleen Kaur | Corporate Trainer & Microsoft Technology Specialist</title>
+
+<style>
+:root {
+    --cobalt: #005fb7;
+    --slate: #2f2f2f;
+    --light: #f4f7f9;
+    --success: #28a745;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: var(--slate);
+    line-height: 1.6;
+    background: var(--light);
+}
+
+header {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 4px solid var(--cobalt);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--cobalt);
+}
+
+.badge-container { margin-top: 10px; }
+
+.badge {
+    background: #e1f0ff;
+    color: var(--cobalt);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin: 5px;
+    display: inline-block;
+}
+
+section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    border-left: 5px solid var(--cobalt);
+    padding-left: 15px;
+    color: var(--slate);
+}
+
+/* Expertise styling */
+.skill-group {
+    margin-bottom: 1.5rem;
+}
+
+.skill-group strong {
+    color: var(--cobalt);
+}
+
+/* Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.testimonial {
+    background: #fff;
+    border-left: 4px solid var(--success);
+    padding: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    min-height: 120px;
+}
+
+.student-name {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-style: normal;
+    color: var(--cobalt);
+}
+
+.nav-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nav-buttons button {
+    background: var(--cobalt);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-buttons button:hover {
+    background: #004a8f;
+}
+
+.counter {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: gray;
+}
+
+/* CTA */
+.cta-button {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    background: var(--cobalt);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-button:hover { background: #004a8f; }
+
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <h1>Jasleen Kaur</h1>
+    <p>Corporate Trainer | Microsoft Certified Trainer | Oracle Certified Instructor</p>
+
+    <div class="badge-container">
+        <span class="badge">Microsoft Certified: Fabric Analytics Engineer Associate</span>
+        <span class="badge">Microsoft Certified: Fabric Data Engineer Associate</span>
+        <span class="badge">Microsoft Certified: Azure Fundamentals</span>
+	<span class="badge">Microsoft Certified: Azure Data Engineer Associate</span>
+	<span class="badge">Oracle Certified Associate, Java SE 8 Programmer</span>
+        <span class="badge">10+ Years Teaching Experience</span>
+    </div>
+</header>
+
+<section>
+
+<div class="card">
+<h2>Professional Profile</h2>
+
+<p>
+With over 10+ years of experience in technical education and corporate training, I specialize in delivering 
+industry-focused programs across foundational programming, data structures, cloud computing, and Microsoft enterprise technologies.
+</p>
+
+<p>
+I have trained 5,000+ learners including university students, corporate teams, and working professionals in 
+<strong>C, C++, Java SE8, Java SE11, Java SE17, Java EE, Data Structures & Algorithms, Microsoft Azure, Azure Data Factory, Azure Synapse Analytics, Microsoft Fabric, SQL, and enterprise data engineering.</strong>
+</p>
+
+<p>
+My training methodology focuses on deep conceptual clarity, real-world architecture understanding, and production-level implementation scenarios.
+</p>
+
+</div>
+
+<h2>Core Expertise</h2>
+
+<div class="card">
+
+<div class="skill-group">
+<strong>Programming Foundations:</strong><br>
+C • C++ • Java • OOP • Data Structures • Algorithms • Problem Solving
+</div>
+
+<div class="skill-group">
+<strong>Cloud & Microsoft Stack:</strong><br>
+Microsoft Azure • Azure Data Factory • Azure Synapse Analytics • Microsoft Fabric • Azure SQL • Power BI
+</div>
+
+<div class="skill-group">
+<strong>Enterprise Data Engineering:</strong><br>
+ETL/ELT Pipelines • Data Modeling • Analytics Engineering • Real-Time Scenarios • Architecture Design
+</div>
+
+</div>
+
+<h2>What Learners Say</h2>
+
+<div class="card">
+    <div id="testimonialGrid" class="testimonial-grid"></div>
+
+    <div class="nav-buttons">
+        <button onclick="prevTestimonial()">Previous</button>
+        <button onclick="nextTestimonial()">Next</button>
+    </div>
+
+    <div class="counter" id="testimonialCounter"></div>
+</div>
+
+<a href="mailto:your-email@example.com" class="cta-button">
+    Book a Corporate Training Session
+</a>
+
+</section>
+
+<script>
+
+const testimonials = [
+{
+    text: "Jasleen is a master in each and every concept of Microsoft Fabric.",
+    name: "— Prashant G. (Infosys)"
+},
+{
+    text: "Her patience and expertise are truly commendable. She explains labs in a detailed and in-depth manner.",
+    name: "— Kartik S. (Infosys)"
+},
+{
+    text: "She connects theory with real-time examples which makes learning clear and practical.",
+    name: "— Nidhiyasri (Infosys)"
+},
+{
+    text: "Our trainer, Jasleen Kaur Ji, demonstrated exceptional knowledge as an instructor. She was very thorough with all the concepts required for the DP-700 exam and was kind enough to explain doubts and labs in a detailed and in‑depth manner. Her patience and expertise are truly commendable and deserve genuine appreciation as an instructor. :)",
+    name: "— Kartik Sanadhya (Infosys)"
+},
+{
+    text: " Awesome. So far Jasleen was the best trainer I ever had. She went into detail where needed and always kept it relevant and intersting..",
+    name: "— Daniel (Thailand)"
+},
+{
+    text: "What a wonderful instructor !! really impressed with all the way session went through and the amazing knowledge that’s been shared.",
+    name: "— Sudhir (Deloitte)"
+},
+{
+    text: "Jasleen is very knowledgeable in the Java subject matter and can effectively demonstrate JAVA concepts in a clear manner with examples. I woulld rate Jasleen as the best trainer since day one of the training. She explained every process of the java clearly.",
+    name: "— Tiisetso Makgolane (South Africa)"
+},
+{
+    text: " Excellent. Great communication, Vast and diverse knowledge for all Fabric contents, Detail oriented and showcasing hand's on skill demonstrating and helping in labs super helpful.",
+    name: "— Sanket Ravishankar Mishra (TCS)"
+},
+
+{
+    text:" Thank you Jasleen for the outstanding training session. Your clear explanations and engaging teaching style made complex concepts easy to understand. We truly appreciate your dedication, patience, and commitment to helping everyone gain valuable skills.",
+    name: "— Naveen Kumar (IBM)"
+},
+
+{
+    text:" Kudos to Jasleen. Excellent instructor and has the required subject knowledge what needs to be delivered the outcome was so different. When an instructor has good amount of knowledge with due examples, the students understands the subject better and can excel. Love to finish off with a Fabric certification and take it to our clients, I hope for the best.",
+    name: "— Sivakumar (IBM)"
+},
+
+{
+    text:" Thank you Jasleen for the outstanding Java SE17 Programming complete session. Your clear explanations and engaging teaching style made complex concepts easy to understand.",
+    name: "— Thandolwethu Sithole (South Africa)"
+},
+
+{
+    text:"  Jasleen was very prepared and ready to take questions. She also focused on explaining all the concepts over examples and going through all the labs with detailed explanation. I really enjoyed the training with her. Thanks a lot for the help.",
+    name: "— Renata Barlangi (Deloitte - Hungary)"
+},
+
+{
+    text:" Jasleen,you're very clear and engaging. You also show clear passion for teaching and being proud when your students understand. Keep up that atittude you'll go far!",
+    name: "— Bruno Costa Santos (Deloitte - Portugal)"
+},
+
+{
+    text:" Jasleen, your training on Microsoft Fabric was exceptional! Your clear explanations and engaging approach made the complex concepts so much easier to grasp. Your dedication truly motivates me to give my best in this certification journey. Thank you for your guidance!",
+    name: "— Joanna Szwajczak (Deloitte - Poland)"
+},
+
+{
+    text:" Jasleen is a prolific educator. All concepts were well laid out and explained. I have already scheduled my certs for this month and with this training, I am much more confident of passing the cert.",
+    name: "— Vishal Iyer (PWC - United States)"
+},
+
+{
+    text:" Jasleen, your training on Microsoft Fabric was exceptional! Your clear explanations and engaging approach made the complex concepts so much easier to grasp. Your dedication truly motivates me to give my best in this certification journey. Thank you for your guidance!",
+    name: "— Joanna Szwajczak (Deloitte - Poland)"
+},
+
+{
+    text:" Jasleen has excellent knowledge and very well taught us. Wherever she thought of content add on she did. All topics covered in much detail very well explained. All doubts cleared ... Sessions was very interactive and bounded us in front of screen. Very well! keep going All the best",
+    name: "— Rahul Yadav (TCS)"
+},
+
+{
+    text: "Jasleen has done a great job in delivering the course content. The sessions were very interactive even with large audience of around 200 people joining starting from Day1. Her patience during the sessions is commendable as there were like many queries popping up now and then and she answered all very well. Thanks Jasleen!",
+    name: "— Mayank Goel (TCS)"
+}
+
+];
+
+const itemsPerPage = 4;
+let currentPage = 0;
+
+function showTestimonials() {
+
+    const grid = document.getElementById("testimonialGrid");
+    const counter = document.getElementById("testimonialCounter");
+
+    grid.innerHTML = "";
+
+    const start = currentPage * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    const currentItems = testimonials.slice(start, end);
+
+    currentItems.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "testimonial";
+        div.innerHTML = `
+            ${item.text}
+            <span class="student-name">${item.name}</span>
+        `;
+        grid.appendChild(div);
+    });
+
+    counter.innerText =
+        `Showing ${start + 1} - ${Math.min(end, testimonials.length)} of ${testimonials.length} feedbacks`;
+}
+
+function nextTestimonial() {
+    if ((currentPage + 1) * itemsPerPage < testimonials.length) {
+        currentPage++;
+    } else {
+        currentPage = 0;
+    }
+    showTestimonials();
+}
+
+function prevTestimonial() {
+    if (currentPage > 0) {
+        currentPage--;
+    } else {
+        currentPage = Math.floor((testimonials.length - 1) / itemsPerPage);
+    }
+    showTestimonials();
+}
+
+showTestimonials();
+
+</script>
+
+</body>
+</html>
